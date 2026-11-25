@@ -64,7 +64,7 @@
     ['rp-plumber', 'Get past Linda (office manager)', '#/roleplay/plumber'],
     ['industries', 'Learn the other industries we serve', '#/industries'],
     ['rp-auto', 'Book the audit with Tony (auto shop)', '#/roleplay/auto'],
-    ['rp-dental', 'Handle Karen’s privacy question (dental)', '#/roleplay/dental'],
+    ['rp-vet', 'Book the audit with Megan (vet clinic)', '#/roleplay/vet'],
     ['rp-salon', 'Book the audit with Jess (salon)', '#/roleplay/salon'],
     ['rp-groomer', 'Book the audit with Sam (groomer)', '#/roleplay/groomer'],
     ['drill', 'Drill 10 objections out loud', '#/drill'],
@@ -89,7 +89,7 @@
 
       <h2 class="section-title">Practice</h2>
       <div class="grid g3">
-        <a class="tile" href="#/roleplay"><h3>Role-play calls</h3><p>${T.scenarios.length} practice calls: contractors, an auto shop, a dental office, a salon and a groomer.</p></a>
+        <a class="tile" href="#/roleplay"><h3>Role-play calls</h3><p>${T.scenarios.length} practice calls: contractors, an auto shop, a vet clinic, a salon and a groomer.</p></a>
         <a class="tile" href="#/drill"><h3>Objection drill</h3><p>Random objection. Say your answer out loud, then compare.</p></a>
         <a class="tile" href="#/quiz"><h3>Quiz</h3><p>${T.quiz.length} questions on pricing, services and technique.</p></a>
       </div>
@@ -97,7 +97,7 @@
       <h2 class="section-title">Know it cold</h2>
       <div class="grid g3">
         <a class="tile" href="#/playbook"><h3>Call playbook</h3><p>Opener, reason, question, the ask. Voicemail and gatekeepers.</p></a>
-        <a class="tile" href="#/industries"><h3>Industries</h3><p>Auto shops, dental, salons, groomers: what hurts, what to say, what to watch for.</p></a>
+        <a class="tile" href="#/industries"><h3>Industries</h3><p>Auto shops, vet clinics, salons, groomers: what hurts, what to say, what to watch for.</p></a>
         <a class="tile" href="#/services"><h3>Services</h3><p>What each one does and how to say it in one line.</p></a>
         <a class="tile" href="#/pricing"><h3>Pricing</h3><p>Plans, setup, guarantee, contract, and how to talk price.</p></a>
         <a class="tile" href="#/stats"><h3>Stats</h3><p>Researched numbers, how solid each one is, and safe wording.</p></a>
@@ -153,7 +153,7 @@
     view.innerHTML = `
       <span class="eyebrow">Who we call</span>
       <h1>Contractors first. Any business that runs on the phone.</h1>
-      <p class="lead">Same pitch, same goal (book the free audit). Change the picture: a roof, a car lift, a dental chair, a salon chair, a dog on the table.</p>
+      <p class="lead">Same pitch, same goal (book the free audit). Change the picture: a roof, a car lift, a salon chair, a dog on the table, a vet’s waiting room.</p>
       <p class="small muted">Dollar figures are ballparks from the sources named. Always ask for their number: “What’s a typical job or visit worth to you?”</p>
       ${T.industries.map((x) => `
         <article class="card">
@@ -450,8 +450,8 @@
       const leads = missed * n.real / 100;
       const jobs = leads * n.close / 100;
       const lost = jobs * n.job;
-      const lc = n.job ? Math.ceil(397 / n.job * 10) / 10 : 0;
-      const fd = n.job ? Math.ceil(997 / n.job * 10) / 10 : 0;
+      const lc = n.job ? Math.ceil(T.plans[0].monthly / n.job * 10) / 10 : 0;
+      const fd = n.job ? Math.ceil(T.plans[1].monthly / n.job * 10) / 10 : 0;
       view.querySelector('#out').innerHTML = `
         <p class="muted" style="margin-bottom:4px">Estimated work lost every month</p>
         <p class="big">${money(lost)}</p>

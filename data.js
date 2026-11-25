@@ -9,7 +9,7 @@ window.TRAINING = {
     tagline: 'Never miss another job.',
     promise: 'Every call becomes a captured lead.',
     area: 'Erie and Northwest PA (Erie, Millcreek, Harborcreek, Fairview, Edinboro, North East, Meadville). Always say "Erie," never "Waterford."',
-    who: 'Erie-area home-service contractors with 1–15 employees (HVAC, plumbing, roofing, electrical, landscaping, cleaning) come first. We also sell to any local business that runs on the phone: auto shops, dental and medical offices, salons and barbers, pet groomers, and other small hustle businesses.',
+    who: 'Erie-area home-service contractors with 1–15 employees (HVAC, plumbing, roofing, electrical, landscaping, cleaning) come first. We also sell to any local business that runs on the phone: auto shops, salons and barbers, pet groomers, vet clinics, movers and other small hustle businesses. We do NOT sell to dental, medical or other human healthcare offices.',
     buyer:
       'The owner. Busy, often on a job site, wary of tech and of agencies, reads on a phone. Talks in jobs and dollars. Hates being "sold."',
     goal: 'Every call has one goal: book the free missed-call audit. Not to close a plan on the phone.',
@@ -39,13 +39,13 @@ window.TRAINING = {
       watch: 'Never quote repair prices for them. The AI collects the vehicle, the problem and a callback, then the shop quotes.',
     },
     {
-      name: 'Dental and medical offices',
-      who: 'Dentists, orthodontists, chiropractors, physical therapy, small clinics.',
-      pain: 'The front desk is checking patients in and out. New-patient calls go to voicemail at lunch, after 5 and on busy mornings.',
-      hook: '“When your front desk is checking someone out, who answers the new-patient call?”',
-      value: 'Dental Economics puts a new patient’s first-year value at about $850–$1,300 and lifetime value at $8,000+. The ADA’s average yearly spend works out to at least $4,500 over 7–10 years. PatientNews (from ~2 million scored calls) says the average practice misses about 20% of new-patient calls.',
-      fit: 'Lead Catcher (text-back plus review requests) is a natural first step. The AI receptionist only after the privacy setup below is confirmed.',
-      watch: 'HIPAA. Patient health info needs special handling. Do NOT say we’re “HIPAA compliant.” GoHighLevel has a HIPAA add-on with a signed agreement, but Jon must confirm it’s set up before we sign any medical or dental office. Say: “We’ll walk through how patient info is handled before anything goes live.”',
+      name: 'Vet clinics',
+      who: 'Small-animal and mixed-practice vets and animal hospitals.',
+      pain: 'The front desk has three lines ringing: sick pets, refill requests, appointment requests. Callers get put on hold or sent to voicemail, and new clients try the next clinic.',
+      hook: '“When your front desk has three lines ringing, what happens to the fourth call?”',
+      value: 'An AVMA pet owner survey put the average cost of a pet’s last vet visit around $200 (as cited by industry blogs). Vendor estimates say clinics miss roughly 25–30% of calls during business hours (vendor, use carefully). A new client who comes in once or twice a year for years adds up fast.',
+      fit: 'Front Desk if they’re buried in calls: the AI books routine visits, takes refill requests as messages and answers hours and directions. Lead Catcher for smaller clinics.',
+      watch: 'The AI never gives medical advice and never tells someone their pet is fine. Urgent calls go straight to staff during the day; after hours it gives the emergency hospital number the clinic chooses. Don’t talk about privacy law either way: say “we set it up the way your clinic wants.” We do not serve human healthcare (dental, medical), so don’t pitch them.',
     },
     {
       name: 'Salons, barbers and spas',
@@ -80,9 +80,9 @@ window.TRAINING = {
   services: [
     {
       name: 'Missed-call text-back',
-      what: 'When the contractor can’t answer, the caller gets a text from the business number within seconds: “Sorry we missed you! How can we help?”',
+      what: 'When the contractor can’t answer, the caller gets a text from the business within seconds: “Sorry we missed you! How can we help?”',
       why: 'Most callers who hit voicemail don’t leave a message. They call the next contractor. A fast text keeps the conversation with your client.',
-      say: '“When you can’t grab the phone, your customer gets a text from your number in a few seconds. They text back, you book the job. They never go call the next guy.”',
+      say: '“When you can’t grab the phone, your customer gets a text from your business in a few seconds. They text back, you book the job. They never go call the next guy.”',
       plan: 'Both plans',
     },
     {
@@ -101,14 +101,14 @@ window.TRAINING = {
     },
     {
       name: 'Google review requests',
-      what: 'After a job, the customer gets a simple text asking for a Google review.',
+      what: 'After a job, the customer gets a friendly text with a direct link to the Google review page, plus one reminder if they don’t respond. The owner triggers it by marking the job done, or it runs automatically after an appointment. We ask every customer: Google’s rules don’t allow filtering out unhappy ones.',
       why: 'Most people check Google reviews before calling a local business. More recent reviews means more calls.',
       say: '“After every job your customer gets a text with a one-tap link to leave a review. Contractors forget to ask. This never forgets.”',
       plan: 'Both plans',
     },
     {
       name: 'Google Business Profile cleanup + monthly posts',
-      what: 'We fix hours, services, photos and service area on their Google listing and keep it active with monthly posts.',
+      what: 'We make sure the listing is verified, with the right categories, hours, service area, services, photos and contact info, matching their website. Then we publish a short post each month so it stays active.',
       why: 'The Google profile is often the first thing a homeowner sees. Wrong hours or old photos cost calls.',
       say: '“We clean up your Google listing so it’s right, and keep it fresh every month.”',
       plan: 'Both plans',
@@ -121,7 +121,7 @@ window.TRAINING = {
       plan: 'Front Desk',
     },
     {
-      name: 'Past-customer tune-up texts',
+      name: 'Tune-up texts to past customers',
       what: 'Seasonal reminder texts to past customers (furnace tune-ups, AC checks, gutter cleaning, etc.).',
       why: 'Repeat work from customers who already trust you is the cheapest work there is.',
       say: '“Every fall your past customers get a reminder to book a tune-up. That’s work you already earned.”',
@@ -161,8 +161,9 @@ window.TRAINING = {
   plans: [
     {
       name: 'Lead Catcher',
-      price: '$397/mo',
-      setup: '$497 one-time setup',
+      price: '$297/mo',
+      monthly: 297,
+      setup: '$297 one-time setup',
       fit: 'Owner-operators and small crews who mostly need missed calls caught and more reviews.',
       includes: [
         'Missed-call text-back',
@@ -174,14 +175,15 @@ window.TRAINING = {
     },
     {
       name: 'Front Desk (most popular)',
-      price: '$997/mo',
-      setup: '$497 one-time setup',
+      price: '$897/mo',
+      monthly: 897,
+      setup: '$297 one-time setup',
       fit: 'Busy shops that get a lot of calls, run emergency work, or lose calls nights and weekends.',
       includes: [
         'Everything in Lead Catcher',
         '24/7 AI receptionist with call sorting and booking',
         'Quote follow-up',
-        'Past-customer tune-up texts',
+        'Tune-up texts to past customers',
         'Monthly "leads we caught" report',
       ],
     },
@@ -201,9 +203,10 @@ window.TRAINING = {
     'Not sure which plan? The free audit tells them.',
   ],
   pricingTips: [
-    'Don’t lead with price on a cold call. The goal is the audit. If asked, give the range honestly: “Plans start at $397 a month. The audit tells us if it’s even worth it for you.”',
+    'Don’t lead with price on a cold call. The goal is the audit. If asked, give the range honestly: “Plans start at $297 a month. The audit tells us if it’s even worth it for you.”',
     'Always tie price to one job: “If it catches one furnace repair or one roof leak a month, it’s paid for.”',
     'Never invent discounts. If you think a deal is needed, tell Jon.',
+    'Founding-client pricing is offered in person only. It is never on the website or in a public post. Only offer the terms Jon has approved.',
     'Mention the guarantee when price comes up. It takes the risk off them.',
   ],
 
@@ -276,11 +279,11 @@ window.TRAINING = {
       say: '“People read their texts. Nobody ignores a text the way they ignore voicemail.” Skip the exact percentage.',
     },
     {
-      stat: 'Dental: a new patient is worth about $850–$1,300 in the first year, and often $8,000+ over their lifetime. The average practice misses about 20% of new-patient calls.',
-      source: 'Dental Economics (value); PatientNews analysis of ~2 million scored calls (missed calls)',
-      url: 'https://dentaleconomics.com/practice/article/55385634/the-economics-of-missed-calls-quantifying-revenue-loss-in-dental-practices',
+      stat: 'Vet clinics: vendor estimates say clinics miss roughly 25–30% of calls during business hours. An AVMA pet owner survey put the average cost of a pet’s last vet visit around $200.',
+      source: 'Today’s Veterinary Business; AVMA pet owner survey as cited by industry blogs',
+      url: 'https://todaysveterinarybusiness.com/the-six-figure-problem-with-your-phone-system/',
       strength: 'vendor',
-      say: '“Industry numbers put a new patient at around a thousand dollars in the first year. And one big call study found offices miss about one in five new-patient calls.”',
+      say: '“Industry estimates say a lot of clinics miss a quarter or more of their calls on a busy day. What’s an average visit worth to you?”',
     },
     {
       stat: 'Auto repair: in a 2025 survey of 752 shops, the most common average repair order was $500–$749, with $250–$499 a close second.',
@@ -407,7 +410,7 @@ window.TRAINING = {
     },
     {
       o: 'I don’t want a robot talking to my customers.',
-      r: '“Totally get that. Neither do your customers want voicemail. It sounds natural, says it’s an assistant for your business, and if it’s an emergency it rings your cell right away. And on Lead Catcher there’s no AI at all, just a text from your number.”',
+      r: '“Totally get that. Neither do your customers want voicemail. It sounds natural, says it’s an assistant for your business, and if it’s an emergency it rings your cell right away. And on Lead Catcher there’s no AI at all, just a text from your business.”',
       real: 'The fear is sounding cheap or losing an emergency. Address both. Lead Catcher is a no-AI option.',
     },
     {
@@ -463,16 +466,26 @@ window.TRAINING = {
     {
       o: 'My clients book online. They don’t call.',
       r: '“That’s great, online booking is smart. Some people still call, though: new clients, older regulars, anyone with a question. When one of them gets voicemail, we text them right back with your booking link. You keep your system. We just catch the ones who slip through.”',
-      real: 'Common with salons, groomers and dental offices. Never fight their booking software. We work alongside it.',
+      real: 'Common with salons, groomers and vet clinics. Never fight their booking software. We work alongside it.',
     },
     {
-      o: 'Is this HIPAA compliant? (dental / medical)',
-      r: '“Good question, and I won’t guess on that. Patient information has to be handled right. Before anything goes live we walk through exactly how patient info is handled, and Jon sets up the privacy side. Can we start with the free audit so you see what callers hear today?”',
-      real: 'Never say “yes, we’re HIPAA compliant.” Flag it for Jon. The audit itself doesn’t touch patient data.',
+      o: 'Would it give medical advice to pet owners? (vet clinics)',
+      r: '“No, never. It doesn’t diagnose and it never tells anyone their pet is fine. Urgent calls go straight to your staff, and after hours it gives the emergency hospital number you choose. It handles the routine stuff: booking visits, taking refill requests as messages, hours and directions.”',
+      real: 'The fear is a machine mishandling a sick animal. Make it clear that urgent calls always go to people.',
+    },
+    {
+      o: 'Will this get me to the top of Google?',
+      r: '“More reviews and a complete, active Google profile are two of the biggest things you can control for local rankings, and we do both. But I won’t promise a specific spot, because nobody honest can.”',
+      real: 'Never promise rankings. Talk about what we control: reviews and the profile.',
+    },
+    {
+      o: 'Can you only ask my happy customers for reviews?',
+      r: '“We ask everyone. Google’s rules don’t allow filtering out unhappy customers. The good news: a steady stream of reviews keeps one bad one from sinking you.”',
+      real: 'Review gating breaks Google’s rules. Be straight about it.',
     },
     {
       o: 'I’m a one-person shop. This is way too much for me.',
-      r: '“Makes sense. That’s why there are two plans. Most solo owners start on Lead Catcher: every missed call gets a text from your number, and happy customers get asked for a Google review. If it lands you one regular customer a month, it pays for itself.”',
+      r: '“Makes sense. That’s why there are two plans. Most solo owners start on Lead Catcher: every missed call gets a text from your business, and every customer gets asked for a Google review. If it lands you one regular customer a month, it pays for itself.”',
       real: 'Lead with Lead Catcher and the math on one regular customer. Don’t push Front Desk on a solo business.',
     },
     {
@@ -503,7 +516,7 @@ window.TRAINING = {
           line: '“Look, I’m on a job. What do you want?”',
           choices: [
             { t: '“Fair enough. I help Erie contractors catch the calls they miss while they’re on jobs, like right now. Who picks up when you can’t?”', p: 2, f: 'Nice recovery: clear reason, tied to his exact situation, ends with a question.', n: 'c' },
-            { t: '“We have a great AI receptionist product starting at $997 a month.”', p: 0, f: 'Leading with product and price before any pain. He’ll hang up.', n: 'end_bad' },
+            { t: '“We have a great AI receptionist product starting at $897 a month.”', p: 0, f: 'Leading with product and price before any pain. He’ll hang up.', n: 'end_bad' },
           ],
         },
         b: {
@@ -545,7 +558,7 @@ window.TRAINING = {
         e: {
           line: '“What’s this cost me?”',
           choices: [
-            { t: '“The audit’s free. If it makes sense after, plans start at $397 a month. If it catches one furnace call a month, it’s paid for. We also guarantee 10 leads in 60 days or your next month is free.”', p: 2, f: 'Honest, ties price to one job, mentions the guarantee, keeps the audit as the ask.', n: 'f' },
+            { t: '“The audit’s free. If it makes sense after, plans start at $297 a month. If it catches one furnace call a month, it’s paid for. We also guarantee 10 leads in 60 days or your next month is free.”', p: 2, f: 'Honest, ties price to one job, mentions the guarantee, keeps the audit as the ask.', n: 'f' },
             { t: '“Don’t worry about price right now.”', p: 0, f: 'Dodging price kills trust.', n: 'f' },
           ],
         },
@@ -604,7 +617,7 @@ window.TRAINING = {
           line: '“Repairs, maybe a grand. Full roof is 10 grand plus.”',
           choices: [
             { t: '“So one missed repair a month covers it, and one roof covers a year. Free audit first so you see your real numbers. And if we don’t catch 10 leads in 60 days, your next month’s free. Tuesday or Wednesday morning?”', p: 2, f: 'Used his numbers, guarantee, two-option close.', n: 'end_good' },
-            { t: '“Great, Front Desk is $997 a month. Want to start?”', p: 0, f: 'Skipped the audit. Too fast for a skeptic.', n: 'end_bad' },
+            { t: '“Great, Front Desk is $897 a month. Want to start?”', p: 0, f: 'Skipped the audit. Too fast for a skeptic.', n: 'end_bad' },
           ],
         },
       },
@@ -699,7 +712,7 @@ window.TRAINING = {
           line: '“Depends. Oil change is 60 bucks. Brakes, 400, 500. Some jobs are two grand.”',
           choices: [
             { t: '“So one brake job a week that goes to another shop is about $2,000 a month. The free audit shows how many calls you’re actually missing: we call at a busy time and after hours and show you what callers hear. Wednesday or Thursday afternoon to go over it?”', p: 2, f: 'His numbers, the audit, two specific times. Textbook.', n: 'e' },
-            { t: '“Great. Front Desk is $997 a month, want to get started?”', p: 0, f: 'Skipped the audit. Too fast.', n: 'end_bad' },
+            { t: '“Great. Front Desk is $897 a month, want to get started?”', p: 0, f: 'Skipped the audit. Too fast.', n: 'end_bad' },
           ],
         },
         e: {
@@ -719,59 +732,65 @@ window.TRAINING = {
       },
     },
     {
-      id: 'dental',
-      who: 'Office manager',
-      title: 'Karen, dental office manager (asks about privacy)',
-      setup: 'You call a family dental practice in Millcreek with two dentists. Karen, the office manager, answers. She runs the front desk and has been there 12 years.',
+      id: 'vet',
+      who: 'Practice manager',
+      title: 'Megan, vet clinic practice manager (phones nonstop)',
+      setup: 'You call a two-vet animal hospital in Edinboro at 9:30 AM. Megan, the practice manager, answers. She also covers the front desk when it gets busy.',
       start: 'a',
       nodes: {
         a: {
-          line: '“Good morning, Lakeview Family Dental, this is Karen.”',
+          line: '“Edinboro Animal Hospital, can you hold please?”',
           choices: [
-            { t: '“Hi Karen, this is Ty with Flagship Front Desk here in Erie. I’ll be quick: I help local offices catch the new-patient calls that come in while the front desk is busy. Do you have 30 seconds?”', p: 2, f: 'Clear, local, specific reason, respects her time.', n: 'b' },
-            { t: '“Hi, can I speak to the dentist?”', p: 0, f: 'Karen runs the phones. Skipping her is how you lose this office.', n: 'b_cold' },
-          ],
-        },
-        b_cold: {
-          line: '“Doctor’s with a patient. Can I ask what this is about?”',
-          choices: [
-            { t: '“Of course. Honestly, you’re probably the right person. It’s about new-patient calls that get missed when the front desk is checking people in. How often does that happen?”', p: 2, f: 'Good recovery. You brought her in.', n: 'c' },
-            { t: '“I’ll just call back later.”', p: 0, f: 'You walked away from the person who knows exactly how the phones work.', n: 'end_meh' },
+            { t: '“Of course, take your time.”', p: 2, f: 'Patient and kind. She’ll remember that.', n: 'b' },
+            { t: '“Actually, I just need a quick minute with the owner—”', p: 0, f: 'She’s juggling sick-pet calls. Pushing past her starts you off badly.', n: 'b_cold' },
           ],
         },
         b: {
-          line: '“OK, sure. What is it?”',
+          line: '(Two minutes later) “Thanks for holding, this is Megan. How can I help?”',
           choices: [
-            { t: '“When you’re checking a patient out and the phone rings, or at lunch and after 5, what happens to those calls?”', p: 2, f: 'One good question. Now listen.', n: 'c' },
-            { t: '“We have an AI receptionist that can replace your front desk.”', p: 0, f: 'You just told Karen her job could be replaced. Never pitch it that way.', n: 'c_def' },
+            { t: '“Thanks, Megan. Ty with Flagship Front Desk here in Erie. I won’t keep you: I help local clinics catch the calls that slip through when the front desk is slammed, like it sounds right now. Got 30 seconds?”', p: 2, f: 'Thanked her, local, tied the reason to what just happened.', n: 'c' },
+            { t: '“Is one of the vets available?”', p: 1, f: 'The vets are with appointments. Megan runs the phones, so she’s the right person.', n: 'b_cold' },
           ],
         },
-        c_def: {
-          line: '“We don’t need to replace anybody. We do just fine.”',
+        b_cold: {
+          line: '“The doctors are in appointments all day. What’s this about?”',
           choices: [
-            { t: '“I said that badly, sorry. It’s not a replacement, it’s backup for you. The calls that ring while you’re with a patient, or after you’ve gone home.”', p: 2, f: 'Owned it and reframed as backup for her.', n: 'c' },
-            { t: '“Well, it’s cheaper than an employee.”', p: 0, f: 'Doubling down on replacing her. Call over.', n: 'end_bad' },
+            { t: '“Honestly, you’re probably the right person. It’s about calls that get missed or stuck on hold when the front desk is busy. How often does that happen?”', p: 2, f: 'Good recovery. You brought her in.', n: 'c' },
+            { t: '“I’ll just call back later.”', p: 0, f: 'You walked away from the person who knows exactly how the phones work.', n: 'end_meh' },
           ],
         },
         c: {
-          line: '“Lunch it goes to voicemail. After 5 too. People leave messages, mostly. I call them back in the morning.”',
+          line: '“All the time. Mornings are nonstop: sick pets, refills, people wanting appointments. We put a lot of people on hold.”',
           choices: [
-            { t: '“That’s how most offices handle it. The ones who leave messages are fine. I’d worry about new patients who don’t. They call the next dentist. Any idea how many hang up without a message?”', p: 2, f: 'Separated regulars from new patients and let her think about it.', n: 'd' },
-            { t: '“Most people never leave voicemails, so you’re losing patients.”', p: 1, f: 'Telling her she’s wrong. Ask instead.', n: 'd' },
+            { t: '“That sounds like a lot. What happens to the people who don’t want to hold, or who call after you close?”', p: 2, f: 'Curious, and focused on the calls she can’t get to.', n: 'd' },
+            { t: '“Our AI receptionist could replace your front desk staff.”', p: 0, f: 'Never pitch it as replacing her team.', n: 'c_def' },
+          ],
+        },
+        c_def: {
+          line: '“We’re not replacing anybody. Our team is great.”',
+          choices: [
+            { t: '“I said that badly, sorry. It’s backup for your team, for the calls that ring while everyone’s already on the phone, or after you close.”', p: 2, f: 'Owned it and reframed as backup.', n: 'd' },
+            { t: '“Well, it’s cheaper than an employee.”', p: 0, f: 'Doubling down. Call over.', n: 'end_bad' },
           ],
         },
         d: {
-          line: '“I don’t know. Wait, would this thing have access to patient information? We have to be careful with HIPAA.”',
+          line: '“After hours the message says to call the emergency hospital in Erie. During the day, if we can’t get to it, it goes to voicemail. Some people leave messages.”',
           choices: [
-            { t: '“Really good question, and I won’t guess. Patient info has to be handled right. Before anything goes live, we walk through exactly how it’s handled, and our tech lead sets up the privacy side. The free audit doesn’t touch any patient data: we just call like a new patient would. Want to see what we find?”', p: 2, f: 'Honest, no overpromise, flagged it for Jon, and steered to the audit, which is safe.', n: 'e' },
-            { t: '“Oh yeah, we’re totally HIPAA compliant.”', p: 0, f: 'Never promise this. It has to be confirmed and set up first. A wrong answer here can hurt the office and us.', n: 'e' },
-            { t: '“HIPAA doesn’t really apply to phone calls.”', p: 0, f: 'Wrong. Don’t give legal opinions. Say you’ll walk through it before anything goes live.', n: 'end_bad' },
+            { t: '“Your regulars will leave a message. New clients usually don’t, they call the next clinic. What’s a typical visit worth for you, ballpark?”', p: 2, f: 'Separated regulars from new clients, then asked for her number.', n: 'e' },
+            { t: '“So you’re losing tons of new clients.”', p: 1, f: 'Let her get there. Ask instead.', n: 'e' },
           ],
         },
         e: {
-          line: '“I’d have to run it by Dr. Patel.”',
+          line: '“A couple hundred for a regular visit. But wait, would this thing give medical advice? I don’t want a machine telling someone their dog is fine.”',
           choices: [
-            { t: '“Of course. Can we set the audit review for a time Dr. Patel can join, maybe 15 minutes at the end of a day? Then you both see the same results.”', p: 2, f: 'Got both decision makers to the review.', n: 'end_good' },
+            { t: '“No, never. It doesn’t diagnose anything. Urgent calls go straight to your staff, and after hours it gives the emergency hospital number you choose. It just handles the routine stuff: booking visits, refill requests as messages, hours and directions.”', p: 2, f: 'Exactly right. Urgent calls always go to people.', n: 'f' },
+            { t: '“It can triage symptoms and tell people if they need to come in.”', p: 0, f: 'Never promise this. The AI does not give medical advice.', n: 'f' },
+          ],
+        },
+        f: {
+          line: '“Dr. Shah would have to sign off on anything.”',
+          choices: [
+            { t: '“Of course. Free audit first: we call like a new client would, at a busy time and after hours. Can we set 15 minutes when Dr. Shah can join to go over the results?”', p: 2, f: 'Audit as the ask, and both decision makers at the review.', n: 'end_good' },
             { t: '“OK, have the doctor call me.”', p: 1, f: 'The doctor probably won’t call. Get a specific time.', n: 'end_meh' },
           ],
         },
@@ -808,7 +827,7 @@ window.TRAINING = {
         c: {
           line: '“I mean… new people call. Usually I can’t pick up. I try to call back at lunch.”',
           choices: [
-            { t: '“That’s the gap. When you can’t pick up, they get a text from your number right away: ‘Sorry we missed you! Here’s our booking link.’ Most people would rather text anyway. What’s a new client worth to you, if they become a regular?”', p: 2, f: 'Showed how it works with her booking app, then asked for her number.', n: 'd' },
+            { t: '“That’s the gap. When you can’t pick up, they get a text from your business right away: ‘Sorry we missed you! Here’s our booking link.’ Most people would rather text anyway. What’s a new client worth to you, if they become a regular?”', p: 2, f: 'Showed how it works with her booking app, then asked for her number.', n: 'd' },
             { t: '“So you’re losing clients every day.”', p: 1, f: 'Let her come to that. Ask instead.', n: 'd' },
           ],
         },
@@ -816,13 +835,13 @@ window.TRAINING = {
           line: '“A cut and color is like 150. If they come every 6 weeks… that adds up.”',
           choices: [
             { t: '“About 8 visits a year, so one new regular is over $1,000 a year. The free audit shows how many calls you’re missing: we call at a busy time and after hours. Plus Google review requests, which really help salons. Monday or Tuesday, when you’re off?”', p: 2, f: 'Her numbers, the audit, reviews as a bonus, and a time that fits a stylist’s schedule.', n: 'e' },
-            { t: '“Front Desk with the 24/7 AI is $997 a month.”', p: 0, f: 'Wrong plan for a small salon, and too early to talk price.', n: 'e_price' },
+            { t: '“Front Desk with the 24/7 AI is $897 a month.”', p: 0, f: 'Wrong plan for a small salon, and too early to talk price.', n: 'e_price' },
           ],
         },
         e_price: {
-          line: '“$997?! No way. That’s a lot of haircuts.”',
+          line: '“$897?! No way. That’s a lot of haircuts.”',
           choices: [
-            { t: '“Fair, and honestly that’s not the plan I’d suggest for you. Lead Catcher is $397: the text-back and review requests. But let’s not guess. The free audit shows if it’s even worth it.”', p: 2, f: 'Good recovery to the right plan and back to the audit.', n: 'e' },
+            { t: '“Fair, and honestly that’s not the plan I’d suggest for you. Lead Catcher is $297: the text-back and review requests. But let’s not guess. The free audit shows if it’s even worth it.”', p: 2, f: 'Good recovery to the right plan and back to the audit.', n: 'e' },
             { t: '“It pays for itself, trust me.”', p: 0, f: '“Trust me” after a price shock loses her.', n: 'end_bad' },
           ],
         },
@@ -859,14 +878,14 @@ window.TRAINING = {
         c: {
           line: '“They go to voicemail. People leave messages, sometimes. I call back at night. Honestly I can’t afford fancy stuff, it’s just me.”',
           choices: [
-            { t: '“That makes total sense, and I wouldn’t push the big plan on a one-person shop. The simple version just texts people back from your number when you miss a call, and asks happy customers for a Google review. How often do your regulars come in?”', p: 2, f: 'Matched the plan to the business and moved to the math.', n: 'd' },
+            { t: '“That makes total sense, and I wouldn’t push the big plan on a one-person shop. The simple version just texts people back from your business when you miss a call, and asks every customer for a Google review. How often do your regulars come in?”', p: 2, f: 'Matched the plan to the business and moved to the math.', n: 'd' },
             { t: '“The full AI receptionist would answer every call for you!”', p: 0, f: 'Ignored the budget concern. Wrong plan for a solo groomer.', n: 'd_price' },
           ],
         },
         d_price: {
           line: '“How much is that?”',
           choices: [
-            { t: '“That one’s $997, which honestly is more than you need. The text-back plan is $397, and the audit will show if even that makes sense.”', p: 2, f: 'Honest, steered to the right plan.', n: 'd' },
+            { t: '“That one’s $897, which honestly is more than you need. The text-back plan is $297, and the audit will show if even that makes sense.”', p: 2, f: 'Honest, steered to the right plan.', n: 'd' },
             { t: '“It’s an investment in your business.”', p: 0, f: 'Dodging the price. Sam will hang up.', n: 'end_bad' },
           ],
         },
@@ -896,8 +915,9 @@ window.TRAINING = {
   // ── Quiz ───────────────────────────────────────────────────
   quiz: [
     { q: 'What is the main goal of a cold call?', a: ['Close the Front Desk plan', 'Book the free missed-call audit', 'Get their email', 'Explain every feature'], c: 1, why: 'The audit is a small, free yes. Plans get discussed after.' },
-    { q: 'How much is Lead Catcher?', a: ['$297/mo', '$397/mo + $497 setup', '$497/mo + $397 setup', '$997/mo'], c: 1, why: 'Lead Catcher is $397/month plus a $497 one-time setup.' },
-    { q: 'How much is Front Desk?', a: ['$997/mo + $497 setup', '$797/mo', '$1,500/mo', '$997/mo, no setup'], c: 0, why: 'Front Desk is $997/month plus $497 setup.' },
+    { q: 'How much is Lead Catcher?', a: ['$297/mo + $297 setup', '$397/mo + $497 setup', '$297/mo, no setup', '$897/mo'], c: 0, why: 'Lead Catcher is $297/month plus a $297 one-time setup.' },
+    { q: 'How much is Front Desk?', a: ['$897/mo + $297 setup', '$997/mo + $497 setup', '$1,500/mo', '$897/mo, no setup'], c: 0, why: 'Front Desk is $897/month plus $297 setup.' },
+    { q: 'Where can founding-client pricing be mentioned?', a: ['On the website', 'In a Facebook post', 'In person only, with terms Jon approved', 'Anywhere'], c: 2, why: 'Founding-client pricing is in person only. The website shows regular prices.' },
     { q: 'Which plan includes the 24/7 AI receptionist?', a: ['Lead Catcher', 'Front Desk', 'Both', 'Neither'], c: 1, why: 'The AI receptionist is in Front Desk (and up).' },
     { q: 'What’s the guarantee?', a: ['Money back anytime', '10 leads in 60 days or the next month is free', '20 leads in 30 days', 'No guarantee'], c: 1, why: '10 leads in 60 days, or the next month is free.' },
     { q: 'What’s the contract?', a: ['12 months', 'No minimum', '3-month minimum, then month-to-month', '6 months'], c: 2, why: '3 months, then month-to-month.' },
@@ -917,8 +937,9 @@ window.TRAINING = {
     { q: 'Can you text a prospect you cold-called who didn’t give permission?', a: ['Yes', 'Only once', 'No, only text people who said yes', 'Only on weekends'], c: 2, why: 'Only text with permission.' },
     { q: 'Which is NOT in Lead Catcher?', a: ['Missed-call text-back', 'Google review requests', 'Quote follow-up', 'Google Business Profile cleanup'], c: 2, why: 'Quote follow-up is in Front Desk.' },
     { q: 'Where do we say we’re based?', a: ['Waterford', 'Erie / Erie and Northwest PA', 'Pittsburgh', 'Don’t mention it'], c: 1, why: 'Always “Erie” or “Erie and Northwest PA.” Never “Waterford.”' },
-    { q: 'Besides contractors, which businesses do we also call on?', a: ['Only contractors', 'Auto shops, dental offices, salons, groomers and other local businesses', 'Big national chains', 'Restaurants only'], c: 1, why: 'Contractors first, plus any local business that runs on the phone.' },
-    { q: 'A dental office asks, “Is this HIPAA compliant?” Best answer?', a: ['“Yes, totally.”', '“HIPAA doesn’t apply to phones.”', '“I won’t guess. We walk through how patient info is handled before anything goes live, and the audit doesn’t touch patient data.”', 'Change the subject'], c: 2, why: 'Never promise HIPAA. Jon confirms the privacy setup before any medical client goes live.' },
+    { q: 'Besides contractors, which businesses do we also call on?', a: ['Only contractors', 'Auto shops, salons, groomers, vet clinics and other local businesses', 'Dental and medical offices', 'Restaurants only'], c: 1, why: 'Contractors first, plus local businesses that run on the phone. Not human healthcare.' },
+    { q: 'A vet clinic asks if the AI gives medical advice. You say…', a: ['“Yes, it triages symptoms.”', '“No. Urgent calls go to your staff, and after hours it gives your emergency hospital number.”', '“Only for dogs.”', '“It depends.”'], c: 1, why: 'The AI never gives medical advice. Urgent calls always go to people.' },
+    { q: 'A prospect asks, “Can you only ask my happy customers for reviews?”', a: ['“Sure.”', '“No, we ask everyone. Google’s rules don’t allow filtering.”', '“Only on Front Desk.”', '“We delete bad reviews.”'], c: 1, why: 'Review gating breaks Google’s rules. We ask everyone.' },
     { q: 'A salon says, “Clients book online.” Best move?', a: ['Say online booking is outdated', 'Agree, then ask who still calls, and explain we text missed callers the booking link', 'Hang up', 'Offer a discount'], c: 1, why: 'Work alongside their booking app, never against it.' },
     { q: 'Which plan usually fits a solo pet groomer?', a: ['Front Desk', 'Lead Catcher', 'Managed IT', 'None of them'], c: 1, why: 'Lead Catcher: text-back and review requests, at a price a one-person shop can justify.' },
     { q: 'An auto shop owner asks if the AI will quote brake jobs. You say…', a: ['“Yes, we load all your prices.”', '“No. It takes the car, the problem and a number, and books a drop-off. You quote it.”', '“It guesses based on the car.”', '“Only on weekends.”'], c: 1, why: 'Repair prices depend on the car. The shop always quotes.' },
