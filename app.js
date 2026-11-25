@@ -25,6 +25,7 @@
     ['/roleplay', 'Role-Play'],
     ['/objections', 'Objections'],
     ['/drill', 'Drill'],
+    ['/industries', 'Industries'],
     ['/services', 'Services'],
     ['/pricing', 'Pricing'],
     ['/stats', 'Stats'],
@@ -32,7 +33,7 @@
     ['/quiz', 'Quiz'],
   ];
   const routes = {
-    '/': home, '/services': services, '/pricing': pricing, '/stats': stats, '/playbook': playbook,
+    '/': home, '/industries': industries, '/services': services, '/pricing': pricing, '/stats': stats, '/playbook': playbook,
     '/objections': objections, '/drill': drill, '/roleplay': roleplayList, '/quiz': quiz, '/calculator': calculator,
   };
 
@@ -61,6 +62,11 @@
     ['rp-hvac', 'Book the audit with Dave (HVAC)', '#/roleplay/hvac'],
     ['rp-roofer', 'Book the audit with Mike (roofer)', '#/roleplay/roofer'],
     ['rp-plumber', 'Get past Linda (office manager)', '#/roleplay/plumber'],
+    ['industries', 'Learn the other industries we serve', '#/industries'],
+    ['rp-auto', 'Book the audit with Tony (auto shop)', '#/roleplay/auto'],
+    ['rp-dental', 'Handle Karen’s privacy question (dental)', '#/roleplay/dental'],
+    ['rp-salon', 'Book the audit with Jess (salon)', '#/roleplay/salon'],
+    ['rp-groomer', 'Book the audit with Sam (groomer)', '#/roleplay/groomer'],
     ['drill', 'Drill 10 objections out loud', '#/drill'],
   ];
   function home() {
@@ -83,7 +89,7 @@
 
       <h2 class="section-title">Practice</h2>
       <div class="grid g3">
-        <a class="tile" href="#/roleplay"><h3>Role-play calls</h3><p>Talk to Dave, Mike and Linda. Pick your lines, get scored.</p></a>
+        <a class="tile" href="#/roleplay"><h3>Role-play calls</h3><p>${T.scenarios.length} practice calls: contractors, an auto shop, a dental office, a salon and a groomer.</p></a>
         <a class="tile" href="#/drill"><h3>Objection drill</h3><p>Random objection. Say your answer out loud, then compare.</p></a>
         <a class="tile" href="#/quiz"><h3>Quiz</h3><p>${T.quiz.length} questions on pricing, services and technique.</p></a>
       </div>
@@ -91,11 +97,12 @@
       <h2 class="section-title">Know it cold</h2>
       <div class="grid g3">
         <a class="tile" href="#/playbook"><h3>Call playbook</h3><p>Opener, reason, question, the ask. Voicemail and gatekeepers.</p></a>
+        <a class="tile" href="#/industries"><h3>Industries</h3><p>Auto shops, dental, salons, groomers: what hurts, what to say, what to watch for.</p></a>
         <a class="tile" href="#/services"><h3>Services</h3><p>What each one does and how to say it in one line.</p></a>
         <a class="tile" href="#/pricing"><h3>Pricing</h3><p>Plans, setup, guarantee, contract, and how to talk price.</p></a>
         <a class="tile" href="#/stats"><h3>Stats</h3><p>Researched numbers, how solid each one is, and safe wording.</p></a>
         <a class="tile" href="#/objections"><h3>Objections</h3><p>${T.objections.length} objections with answers that go back to the audit.</p></a>
-        <a class="tile" href="#/calculator"><h3>Missed-call calculator</h3><p>Run a contractor’s own numbers live on the call.</p></a>
+        <a class="tile" href="#/calculator"><h3>Missed-call calculator</h3><p>Run a prospect’s own numbers live on the call.</p></a>
       </div>
 
       <div class="card" style="margin-top:18px">
@@ -138,6 +145,27 @@
           <li><b>Spam</b> → dropped</li>
         </ul>
       </div>`;
+  }
+
+  // ── Industries ─────────────────────────────────────────────
+  function industries() {
+    markDone('industries');
+    view.innerHTML = `
+      <span class="eyebrow">Who we call</span>
+      <h1>Contractors first. Any business that runs on the phone.</h1>
+      <p class="lead">Same pitch, same goal (book the free audit). Change the picture: a roof, a car lift, a dental chair, a salon chair, a dog on the table.</p>
+      <p class="small muted">Dollar figures are ballparks from the sources named. Always ask for their number: “What’s a typical job or visit worth to you?”</p>
+      ${T.industries.map((x) => `
+        <article class="card">
+          <h2>${esc(x.name)}</h2>
+          <p class="small muted" style="margin-top:-4px">${esc(x.who)}</p>
+          <p><b>What hurts:</b> ${esc(x.pain)}</p>
+          <p class="say">${esc(x.hook)}</p>
+          <p><b>The money:</b> ${esc(x.value)}</p>
+          <p><b>Best fit:</b> ${esc(x.fit)}</p>
+          <p style="margin-bottom:0"><b>Watch out:</b> ${esc(x.watch)}</p>
+        </article>`).join('')}
+      <div class="btn-row"><a class="btn btn--primary" href="#/roleplay">Practice these calls</a></div>`;
   }
 
   // ── Pricing ────────────────────────────────────────────────
@@ -250,7 +278,7 @@
       <h1>Say it out loud</h1>
       <p class="lead">Read the objection. Answer it out loud like you’re on the call (or type it). Then reveal and compare.</p>
       <div class="card flash">
-        <p class="muted small" style="margin-bottom:6px">The contractor says:</p>
+        <p class="muted small" style="margin-bottom:6px">The prospect says:</p>
         <p class="q">“${esc(o.o.replace(/^“|”$/g, ''))}”</p>
       </div>
       <label for="mine" class="small" style="font-weight:700">Your answer (optional)</label>
@@ -278,7 +306,7 @@
     view.innerHTML = `
       <span class="eyebrow">Role-play</span>
       <h1>Practice real calls</h1>
-      <p class="lead">Pick a contractor. Read their line, choose what you’d say, and get feedback on every choice. Goal: book the audit.</p>
+      <p class="lead">Pick a call. Read their line, choose what you’d say, and get feedback on every choice. Goal: book the audit.</p>
       <p class="small muted">Tip: read your choice out loud before you tap it. Saying it is the practice.</p>
       <div class="grid">${T.scenarios.map((s) => {
         const b = S.best['rp-' + s.id];
@@ -322,14 +350,14 @@
       view.innerHTML = `
         <span class="eyebrow">${esc(sc.title)}</span>
         ${log.length ? '' : `<div class="card"><p style="margin:0">${esc(sc.setup)}</p></div>`}
-        <div class="chat">${chat}<div class="msg msg--them"><small>Contractor</small>${esc(n.line)}</div></div>
+        <div class="chat">${chat}<div class="msg msg--them"><small>${esc(sc.who || 'Contractor')}</small>${esc(n.line)}</div></div>
         <p class="small" style="font-weight:700">What do you say?</p>
         <div class="choices">${choices.map((c, i) => `<button class="choice" data-i="${i}">${esc(c.t)}</button>`).join('')}</div>`;
       view.querySelectorAll('.choice').forEach((b) => b.addEventListener('click', () => {
         const c = choices[+b.dataset.i];
         got += c.p; max += 2;
         log.push({ html:
-          `<div class="msg msg--them"><small>Contractor</small>${esc(n.line)}</div>` +
+          `<div class="msg msg--them"><small>${esc(sc.who || 'Contractor')}</small>${esc(n.line)}</div>` +
           `<div class="msg msg--me"><small>You</small>${esc(c.t)}</div>` +
           `<div class="fb fb--${c.p}">${c.p === 2 ? 'Strong. ' : c.p === 1 ? 'Okay. ' : 'Weak. '}${esc(c.f)}</div>` });
         node = c.n;
@@ -412,7 +440,7 @@
         <h3>How to say it</h3>
         <p class="say" id="sayit" style="margin-bottom:0"></p>
       </div>
-      <p class="small muted">Defaults match the example on our website (150 calls, 20% missed → about 11 real leads → about 5 lost jobs). Change them to the contractor’s real numbers. This is an estimate, not a promise.</p>`;
+      <p class="small muted">Defaults match the example on our website (150 calls, 20% missed → about 11 real leads → about 5 lost jobs). Change them to the prospect’s real numbers. This is an estimate, not a promise.</p>`;
     const ids = ['calls', 'missed', 'real', 'close', 'job'];
     function calc() {
       const n = {};
